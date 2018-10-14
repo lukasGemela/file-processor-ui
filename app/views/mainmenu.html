@@ -1,0 +1,7 @@
+<div id="menu-wrapper-div">
+	<div>
+		<!-- ngModel unsupported for input file -->
+		<label>{{uploadMessage}}</label>
+		<input type="file" ng-disabled="selectingFileDisabled" onchange="angular.element(this).scope().setFile(this.files[0])"></div>
+		<button ng-click="uploadClicked()" ng-disabled="uploadDisabled">Upload!</button>
+</div>

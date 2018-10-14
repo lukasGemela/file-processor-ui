@@ -15,9 +15,9 @@ angular.module('deimosApp')
         var deferred = $q.defer();
 
         var fd = new FormData();
-        fd.append("file", file);
+        fd.append('file', file);
     
-        $http.post(config.fileProcessorUploadUrl, fd, {
+        $http.post(config.fileServiceUrl + "/files", fd, {
             withCredentials: false,
             headers: {'Content-Type': undefined},
             transformRequest: angular.identity
@@ -38,7 +38,7 @@ angular.module('deimosApp')
       if(httpError.data && httpError.data.errors && httpError.data.errors[0]) { //TODO: replace with lodash
         return httpError.data.errors[0].message;
       } else {
-        return "Unknown error, HTTP Code: " + httpError.status;
+        return 'Unknown error, HTTP Code: ' + httpError.status;
       }
     }
 

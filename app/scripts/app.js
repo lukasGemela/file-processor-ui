@@ -19,13 +19,18 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/uploadFile', {
         templateUrl: 'views/mainmenu.html',
         controller: 'PatentOfficeController',
         controllerAs: 'patentofficecontroller'
       })
+      .when('/topics', {
+        templateUrl: 'views/topicsview.html',
+        controller: 'TopicsController',
+        controllerAs: 'topicsController'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/topics'
       });
   });
 

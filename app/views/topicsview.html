@@ -1,0 +1,22 @@
+<div id="menu-wrapper-div">
+		<div>
+				<table class="table table-condensed table-hover">
+					<thead>
+					  <tr>
+						  <th>Topics</th>
+					  </tr>
+					</thead>
+					<tbody ng-repeat="topic in topics"
+					ng-controller="TopicRowController" 
+					ng-click="toggleRow()"
+					ng-switch on="isSelected()">
+					  <tr>
+						  <td>{{topic}}</td>
+					  </tr>
+					  <tr ng-switch-when="true" ng-repeat="doc in docs">
+						  <td><a href="{{doc.documentLink}}" target="_self">{{doc.documentName}}</a></td>
+					  </tr>
+					</tbody>
+				</table>
+			  </div>
+</div>

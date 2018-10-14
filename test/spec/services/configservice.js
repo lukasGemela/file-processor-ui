@@ -21,7 +21,7 @@ describe('Service: ConfigService', function () {
             if (!isError) {
               onSuccess({
                 data: {
-                  'catalogueUrl': testURL
+                  'fileProcessorUploadUrl': testURL
                 }
               });
             } else {
@@ -55,7 +55,7 @@ describe('Service: ConfigService', function () {
       function (data) {
 
         expect(data).toEqual({
-          'catalogueUrl': testURL
+          'fileProcessorUploadUrl': testURL
         });
         done();
       }, function (err) {
